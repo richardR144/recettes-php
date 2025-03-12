@@ -55,20 +55,33 @@ $recipes = [
     <link rel="stylesheet" href="style.css">
     <title>Recettes en php</title>
 </head>
-
 <body>
-    
+<header>
+    <nav>
+        <ul>
+            <li><a href="index.php">Accueil</a></li>
+            <li><a href="about.php">A propos</a></li>
+            <li><a href="contact.php">Contact</a></li>
+        </ul>
+    </nav> 
+</header>
 <main>
     
- <h1>Liste des recettes</h1>
+ <h1>Liste des recettes</h1> 
  
-<?php 
-foreach ($recipes as $recipe) {
-    if ($recipe["isPublished"] === true) {
-        
+ <?php 
+ //je parcoursle tableau de recettes et si la recette est publiée, j'affiche les informations de la recette
+foreach ($recipes as $recipe) {   
+    if ($recipe["isPublished"] === true) { ?>  
+        <div class="recipe">
+            <h2><?php echo $recipe["title"]; ?></h2>
+            <img src="<?php echo $recipe["image"]; ?>" alt="<?php echo $recipe["title"]; ?>">
+            <p><?php echo $recipe["description"]; ?></p>
+            <p><?php echo $recipe["publishedDate"]; ?></p>
+        </div>
+<?php
     }
 }
-
 ?>
 </main>
 </body> 
