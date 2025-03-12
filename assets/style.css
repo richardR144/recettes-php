@@ -5,7 +5,7 @@
 }
 
 nav{
-    background-color: aquamarine;
+    background-color: gray;
     width: 100%;
     height: 100px;
 }
@@ -13,12 +13,13 @@ nav{
 li{
     display: inline;
     padding: 10px;
+    list-style: none;
 }
 
 h1{
     text-align: center;
     margin-top: 20px;
-    color: black;
+    color: red;
 }
 .recipe {
     border: 1px solid #ccc;
@@ -37,4 +38,24 @@ h1{
 }
 .not-published {
     color: red;
+}
+
+footer{
+    background-color: gray;
+    width: 100%;
+    height: 100px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    padding-top: 20px;
+    font-size: 20px;
+}
+
+footer ul li{
+    display: inline;
+    padding: 10px;
+    list-style: none;
+    background-position: center;
 }

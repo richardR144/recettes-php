@@ -1,5 +1,10 @@
 <?php
-    $recipes = [
+
+ require_once '../config/config.php'; //je fais appel au fichier config.php
+ require_once '../views/index.php'; //je fais appel au fichier index.php
+
+
+$recipes = [
         [
             "title" => "Appl Pie",
             "description" => "A delicious homemade apple pie with a crispy shortcrust pastry.",
@@ -45,5 +50,5 @@
                 <p><?php echo $recipe["description"]; ?></p>
                 <p>Publié le : <?php echo $recipe["publishedDate"]->format('Y-m-d H:i:s'); ?></p>
             </article>
-
+            <a href="show-recipe.php">Voir la recette</a>  <!--je mets un lien pour voir la recette-->
         <?php } ?>
