@@ -5,13 +5,15 @@
 }
 
 nav{
-    background-color: gray;
+    background-color: rgb(128, 128, 128, 0.3);
     width: 100%;
-    height: 100px;
+    height: 75px;
+
 }
 
 li{
-    display: inline;
+    display: flex;
+    justify-content: center;
     padding: 10px;
     list-style: none;
 }
@@ -21,29 +23,65 @@ h1{
     margin-top: 20px;
     color: red;
 }
+
+h2{
+    text-align: center;
+    margin-top: 20px;
+    color: blueviolet;
+}
+
 .recipe {
     border: 1px solid #ccc;
     padding: 15px;
     margin-bottom: 20px;
     border-radius: 5px;
 }
+
 .recipe h2 {
     margin-top: 0;
+    text-align: center;
 }
+
 .recipe p {
     margin: 5px 0;
 }
+
+img{
+    width: 50%;
+    border-radius: 5px;
+    margin-left: 25%;
+    margin-right: 25%;      
+}   
+
 .published {
     color: green;
 }
+
 .not-published {
     color: red;
 }
 
+p {
+    text-align: center;
+    font-size: 20px;
+}
+
+a{
+    text-decoration: none;
+    color: blueviolet;
+    font-size: 20px;
+}
+
+main{
+    background-color: rgba(160, 189, 160, 0.3);
+    border-radius: 10px;
+}
+
 footer{
-    background-color: gray;
+    background-color: rgba(94, 136, 106, 0.3);
+    border-radius: 10px;
     width: 100%;
-    height: 100px;
+    height: 65px;
     position: fixed;
     bottom: 0;
     left: 0;
@@ -53,9 +91,3 @@ footer{
     font-size: 20px;
 }
 
-footer ul li{
-    display: inline;
-    padding: 10px;
-    list-style: none;
-    background-position: center;
-}
