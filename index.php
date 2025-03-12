@@ -45,6 +45,8 @@ $recipes = [
         "image" => "https://thecookiedoughdiaries.com/wp-content/uploads/2024/06/HERO-triple-chocolate-brownies-5-FEATURED.jpg"
     ]
 ];
+
+
 ?>
 
 <!DOCTYPE html>
@@ -73,12 +75,13 @@ $recipes = [
  //je parcoursle tableau de recettes et si la recette est publiée, j'affiche les informations de la recette
 foreach ($recipes as $recipe) {   
     if ($recipe["isPublished"] === true) { ?>  
-        <div class="recipe">
+        <article class="recipe">
             <h2><?php echo $recipe["title"]; ?></h2>
             <img src="<?php echo $recipe["image"]; ?>" alt="<?php echo $recipe["title"]; ?>">
             <p><?php echo $recipe["description"]; ?></p>
             <p><?php echo $recipe["publishedDate"]; ?></p>
-        </div>
+            <p><?php echo (new DateTime($recipe["publishedDate"]))->format('Y-m-d H:i:s'); ?></p> <!--je formate la date de publication-->
+    </article>
 <?php
     }
 }
