@@ -9,10 +9,7 @@
 </head>
 <body>
 <header>
-<header>
         <nav>
-            <li>
-            <h1><a href="index.php">Toutes les recettes</a></h1>
-            </li>
+            <li><h1><a href="index.php">Toutes les recettes</a></h1></li>    
         </nav>
     </header>
