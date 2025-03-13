@@ -3,7 +3,6 @@
        require_once '../recipes-repository.php'; //je fais appel au fichier recipes-repository.php
        require_once 'partial/header.php'; //je fais appel au fichier header.php
       
-
 ?>
 
 
@@ -12,7 +11,7 @@
 <h1>Connectez-vous !</h1>
 
 <form action="contact-confirmation.php" method="get">  <!--je crée un formulaire qui envoie les données vers la page contact-confirmation.php-->
-       <div>
+       <div class="form-group">
               <label for="email">Email</label>
               <input type="email" id="email" name="email" required>
               <label for="password">Mot de passe</label>

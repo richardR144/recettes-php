@@ -75,6 +75,33 @@ a{
     font-size: 20px;
 }
 
+button{
+    background-color: blueviolet;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+
+.form-group{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
+.form-group label{
+    margin-top: 10px;
+    font-size: 20px;
+}
+
 main{
     background-color: rgba(160, 189, 160);
     border-radius: 10px;
