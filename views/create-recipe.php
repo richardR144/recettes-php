@@ -2,36 +2,26 @@
        require_once '../config/config.php'; //je fais appel au fichier config.php
        require_once 'partial/header.php'; //je fais appel au fichier header.php
        require_once '../recipes-repository.php';
+
              
-       $message = null;
+       $message = null;  //initialise le message 
 
-	if ($_SERVER["REQUEST_METHOD"] === "POST") {
-
-		if (isset($_POST["title"]) &&
-			isset($_POST["description"]) &&
+	if ($_SERVER["REQUEST_METHOD"] === "POST") {  //je vérifie la méthode de la requête(post ou get) 
+		if (isset($_POST["title"]) &&              //si cette condition est dans la méthode POST donc elle est soumise
+			isset($_POST["description"]) &&         //if isset= ça vérifie si les champs sont valides
 			isset($_POST["image"]) &&
 			strlen($_POST["title"]) > 3 &&
 			strlen($_POST["description"]) > 10 &&
 			strlen($_POST["image"]) > 5
-		) {
-            //ajouter la recette dans le tableau de recette
-            $newRecipe = [
-                "title" => $_POST["title"],
-                "description" => $_POST["description"],
-                "publishedDate" => new DateTime(),
-                "isPublished" => true,
-                "image" => $_POST["image"]
-            ];
-
-            array_push($recipes, $newRecipe);
-        
+		) { 
+            //si les champs sont valides la fonction createRecipe est appellées avec les valeurs des champs formulaires
+            createRecipe($_POST["title"], $_POST["description"], $_POST["image"]);
 			$message = "Recette créée";
-		} else {
+		} else {  //sinon message d'erreurs
 			$message = "Tous les champs ne sont pas renseignés !";
 		}
 	}
-    
-    ?>
+	?>
 
     <main>
         <h1>Nouvelle recette</h1>
@@ -61,14 +51,12 @@
         <p><?php echo $message; ?></p>
 
         <?php 
-        foreach($recipes as $index => $recipe) { ?>
-
-		<article class="recipe">
-			<h2 class="recipe-title"><?php echo $recipe["title"]; ?></h2>
-		</article>
-
-	<?php } ?>   
-
-    </main>
-</body>
-</html>
+            foreach($recipes as $index => $recipe) { ?>
+		        <article class="recipe">
+			    <h2 class="recipe-title"><?php echo $recipe["title"]; ?></h2>
+		    </article>
+            <?php } ?>   
+        </main>
+    </body>
+    </html>
+   

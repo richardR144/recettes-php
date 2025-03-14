@@ -37,4 +37,18 @@ $recipes = [
         "image" => "https://thecookiedoughdiaries.com/wp-content/uploads/2024/06/HERO-triple-chocolate-brownies-5-FEATURED.jpg"
     ]
 ];
+
+function createRecipe ($title, $description, $image){   
+    global $recipe; //utiliser la fonction global du tableau $recipe
+    $newRecipe = [   //je créais un nouveau tableau associatif pour la nouvel recette
+        "title" => $title,  //avec son titre, etc
+        "description" => $description,
+        "publishedDate" => new DateTime(),  //Date et heure actuelles
+        "isPublished" => true,     //la recette est publiée par défaut
+        "image" => $image
+    ];
+    //J'ajoute la nouvelle recette au tableau global $recipes
+    array_push($recipes, $newRecipe);
+}
+
 ?>
