@@ -6,14 +6,14 @@
 
 <main>
 
-<p>Achat du livre recettes</p>
+<p>Achat du livre: Les recettes</p>
 
 
 <!--je crée un formulaire qui envoie les données vers la page payment-confirmation.php et les données restent cachées de l'utilisateur-->
 
 <div>
 <form action="payment-confirmation.php" method="post"> 
-	<label>CB Number
+	<label>CB number
 		<input type="text" name="number">
 	</label>
 </div>
