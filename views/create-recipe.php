@@ -1,6 +1,7 @@
 <?php
        require_once '../config/config.php'; //je fais appel au fichier config.php
        require_once 'partial/header.php'; //je fais appel au fichier header.php
+       require_once '../recipes-repository.php';
              
        $message = null;
 
@@ -13,11 +14,21 @@
 			strlen($_POST["description"]) > 10 &&
 			strlen($_POST["image"]) > 5
 		) {
+            //ajouter la recette dans le tableau de recette
+            $newRecipe = [
+                "title" => $_POST["title"],
+                "description" => $_POST["description"],
+                "publishedDate" => new DateTime(),
+                "isPublished" => true,
+                "image" => $_POST["image"]
+            ];
+
+            array_push($recipes, $newRecipe);
+        
 			$message = "Recette créée";
 		} else {
 			$message = "Tous les champs ne sont pas renseignés !";
 		}
-
 	}
     
     ?>
@@ -26,7 +37,7 @@
         <h1>Nouvelle recette</h1>
 
         <h2><?php echo $message?></h2>
-        
+
     <div>
         <form action="create-recipe.php" method="post">
     <div>
@@ -48,6 +59,15 @@
 	<button type="submit">Créez</button>
 
         <p><?php echo $message; ?></p>
+
+        <?php 
+        foreach($recipes as $index => $recipe) { ?>
+
+		<article class="recipe">
+			<h2 class="recipe-title"><?php echo $recipe["title"]; ?></h2>
+		</article>
+
+	<?php } ?>   
 
     </main>
 </body>
