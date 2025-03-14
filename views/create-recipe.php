@@ -1,7 +1,7 @@
 <?php
        require_once '../config/config.php'; //je fais appel au fichier config.php
        require_once 'partial/header.php'; //je fais appel au fichier header.php
-       require_once '../recipes-repository.php';
+       require_once '../models/recipes-repository.php';
 
              
        $message = null;  //initialise le message 

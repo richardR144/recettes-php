@@ -47,7 +47,8 @@ function createRecipe ($title, $description, $image){
         "isPublished" => true,     //la recette est publiée par défaut
         "image" => $image
     ];
-    //J'ajoute la nouvelle recette au tableau global $recipes
+    global $recipes;
+//J'ajoute la nouvelle recette au tableau global $recipes
     array_push($recipes, $newRecipe);
 }
 
